@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+     <div class="container1">
+    <img src="./LSEI LOGO.png" alt="LSEI Logo" class="logo">
+  </div>
+  <div class="container">
+
+    <!-- NAME ENTRY FORM -->
+    <div id="start-screen">
+      <h2>Enter Your Name to Begin</h2>
+      <input type="text" id="student-name" placeholder="Your Full Name" />
+      <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- QUIZ BOX -->
+    <div id="quiz-box" class="hide">
+      <h1>Quiz App</h1>
+      <div id="timer">Time Left: 20:00</div>
+      <div id="progress">Question <span id="current-q">1</span> of <span id="total-q">0</span></div>
+      <h2 id="question">Loading...</h2>
+      <form id="options-form"></form>
+      <div class="btn-group">
+        <button id="prev-btn">Previous</button>
+        <button id="next-btn">Next</button>
+      </div>
+    </div>
+
+    <!-- RESULT SCREEN -->
+    <div id="result-box" class="hide">
+      <h2>Quiz Submitted!</h2>
+      <p>Thank you, <span id="user-name"></span>. Your answers have been submitted.</p>
+      <!-- <button onclick="location.reload()">Retry</button> -->
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+ <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "jzo_xszUuV3ZqdKCL",
+      });
+   })();
+</script>
+</body>
+</html>
