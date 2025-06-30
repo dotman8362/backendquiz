@@ -42,6 +42,42 @@
 
   </div>
   <script src="script.js"></script>
+  <script>
+  // Disable right-click context menu
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Disable copy (Ctrl+C and context menu)
+  document.addEventListener('copy', function(e) {
+    e.preventDefault();
+    alert("Copying is disabled on this page GBOLAHAN STOP IT LOL.");
+  });
+
+  // Disable common inspect and source view shortcuts
+  document.addEventListener('keydown', function(e) {
+    // F12
+    if (e.keyCode === 123) {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+I or Ctrl+Shift+J
+    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) {
+      e.preventDefault();
+    }
+
+    // Ctrl+U (view source)
+    if (e.ctrlKey && e.key === 'u') {
+      e.preventDefault();
+    }
+
+    // Ctrl+S (save page)
+    if (e.ctrlKey && e.key === 's') {
+      e.preventDefault();
+    }
+  });
+</script>
+
  <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
@@ -52,15 +88,6 @@
       });
    })();
 </script>
-  <script>
-    document.addEventListener("contextmenu", function(e) {
-      e.preventDefault();
-    });
-    document.addEventListener("copy", function(e) {
-      e.preventDefault();
-      alert("COPYING IS NOT ALLOWED GBOLAHAN I SEE YOU")
-    })
 
-  </script>
 </body>
 </html>
